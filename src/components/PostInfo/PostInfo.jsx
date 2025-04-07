@@ -10,7 +10,7 @@ export function PostInfo({ post, user }) {
         <p>
           {' Posted by  '}
 
-          {user ? <UserInfo key={user.id} user={user} /> : null}
+          {user ? <UserInfo user={user} /> : null}
         </p>
       </div>
 
