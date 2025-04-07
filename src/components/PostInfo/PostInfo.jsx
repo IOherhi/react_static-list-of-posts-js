@@ -1,7 +1,8 @@
 import './PostInfo.scss';
 import { UserInfo } from '../UserInfo';
+import { CommentList } from '../CommentList';
 
-export function PostInfo({ post, user }) {
+export function PostInfo({ post, user, postComments = [] }) {
   return (
     <div className="PostInfo">
       <div className="PostInfo__header">
@@ -18,7 +19,11 @@ export function PostInfo({ post, user }) {
 
       <hr />
 
-      <b data-cy="NoCommentsMessage">No comments yet</b>
+      {postComments.length > 0 ? (
+        <CommentList comments={postComments} />
+      ) : (
+        <b data-cy="NoCommentsMessage">No comments yet</b>
+      )}
     </div>
   );
 }
